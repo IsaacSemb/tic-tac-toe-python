@@ -43,7 +43,7 @@ def check_full_line(line):
 game_on  = True
 player = [1, "X"]
 
-available_options = ['1','2','3','4','5','6','7','8','9']
+available_options = [str(i) for i in range(1,10)]
 
 while game_on:
     
