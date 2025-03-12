@@ -33,10 +33,8 @@ winning_lines = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],
 
 def check_full_line(line):
     for position in line:
-        if positions[f'{position}'].strip()=='-':
-            return True
         
-        if positions [f'{line[0]}'] == positions [f'{line[1]}'] == positions [f'{line[2]}']:
+        if positions [f'{line[0]}'] == positions [f'{line[1]}'] == positions [f'{line[2]}'] and positions[f'{position}'].strip()!='-':
             return False
         
     return True
