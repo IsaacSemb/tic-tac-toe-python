@@ -25,7 +25,7 @@ Welcome to **Tic Tac Toe**, a simple command-line game built in Python! Play aga
    ```
 3. Run the game:  
    ```bash
-   python tic_tac_toe.py
+   python main.py
    ```
 
 ## 📌 Game Board Example  
