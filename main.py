@@ -52,7 +52,7 @@ def check_full_line(line):
             return True
         
         if positions [f'{line[0]}'] == positions [f'{line[1]}'] == positions [f'{line[2]}']:
-            print(f'victory for {positions [f'{line[0]}']}')
+            # print(f'victory for {positions [f'{line[0]}']}')
             return False #, positions [f'{line[0]}']
     
     return True
