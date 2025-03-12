@@ -10,23 +10,23 @@ def switch_turns(player):
     return [2,'O'] if player[0]==1 else [1, 'X']
 
 def padder(text):
-    return text.center(len(text) + 4)     
+    return text.center(len(text) + 3)     
 
 positions = { '1':'-', '2':'-', '3':'-', '4':'-', '5':'-', '6':'-', '7':'-', '8':'-', '9':'-' }
 
 
 def print_actual_board(positions):
     print(f"{padder(positions['1'])}|{padder(positions['2'])}|{padder(positions['3'])}")
-    print("----------------")
+    print("--------------")
     print(f"{padder(positions['4'])}|{padder(positions['5'])}|{padder(positions['6'])}")
-    print("----------------")
+    print("--------------")
     print(f"{padder(positions['7'])}|{padder(positions['8'])}|{padder(positions['9'])}")
     
 def print_sample_board():
     print(f"{padder('1')}|{padder('2')}|{padder('3')}")
-    print("----------------")
+    print("--------------")
     print(f"{padder('4')}|{padder('5')}|{padder('6')}")
-    print("----------------")
+    print("--------------")
     print(f"{padder('7')}|{padder('8')}|{padder('9')}")
 
 winning_lines = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [7,5,3] ]
@@ -47,8 +47,9 @@ available_options = [str(i) for i in range(1,10)]
 
 while game_on:
     
-    if len(available_options) == 0:
-        print("It is a DRAW")
+    # if len(available_options) == 0:
+    if not available_options:
+        print("\nIt is a DRAW\n")
         break
     
     CURRENT_PLAYER = get_current_player(player)
@@ -62,6 +63,7 @@ while game_on:
     choice = input(f"{CURRENT_PLAYER} ( Q to quit ): ")
     
     if choice.upper() == 'Q':
+        print("\nGame quit. Goodbye!\n")
         break
     elif choice in positions.keys():
         if choice in available_options:
