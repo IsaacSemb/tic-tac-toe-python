@@ -11,20 +11,29 @@ def get_current_player(player):
 
 def switch_turns(player):
     return [2,'O'] if player[0]==1 else [1, 'X']
-    
+
+def padder(text):
+    return text.center(len(text) + 4)     
     
 
 positions = {
-    '1':' - ',
-    '2':' - ',
-    '3':' - ',
-    '4':' - ',
-    '5':' - ',
-    '6':' - ',
-    '7':' - ',
-    '8':' - ',
-    '9':' - ',
+    '1':'-',
+    '2':'-',
+    '3':'-',
+    '4':'-',
+    '5':'-',
+    '6':'-',
+    '7':'-',
+    '8':'-',
+    '9':'-',
 }
+
+def print_board(positions):
+    print(f"{padder(positions['1'])}|{padder(positions['2'])}|{padder(positions['3'])}")
+    print("----------------")
+    print(f"{padder(positions['4'])}|{padder(positions['5'])}|{padder(positions['6'])}")
+    print("----------------")
+    print(f"{padder(positions['7'])}|{padder(positions['8'])}|{padder(positions['9'])}")
 
 winning_lines = [
     [1,2,3],
@@ -56,6 +65,10 @@ available_options = ['1','2','3','4','5','6','7','8','9']
 
 while game_on:
     
+    if len(available_options) == 0:
+        print("its a tie")
+        break
+    
     CURRENT_PLAYER = get_current_player(player)
 
     print()
@@ -70,9 +83,16 @@ while game_on:
     
     print()
     
-    print ([positions['1'],positions['2'],positions['3']])
-    print ([positions['4'],positions['5'],positions['6']])
-    print ([positions['7'],positions['8'],positions['9']])
+    
+    # print ([positions['1'],positions['2'],positions['3']])
+    # print ([positions['4'],positions['5'],positions['6']])
+    # print ([positions['7'],positions['8'],positions['9']])
+    
+    # print_board(positions)
+
+
+
+
     
     print()
     
@@ -98,12 +118,11 @@ while game_on:
     for line in winning_lines:
         game_on = check_full_line(line)
         if not game_on:
+            print_board(positions)
             print(f"player {player[0]} ({player[1]}) Wins")
             break
     
-    if len(available_options) == 0:
-        print("its a tie")
-        break
+    
     
     
     player = switch_turns(player)
