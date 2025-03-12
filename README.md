@@ -1,5 +1,3 @@
-Sure! Here’s a **README.md** file for your Tic Tac Toe project:  
-
 ---
 
 # 🕹️ Tic Tac Toe (Python)
@@ -63,5 +61,3 @@ Welcome to **Tic Tac Toe**, a simple command-line game built in Python! Play aga
 This project is **open-source** and free to use.  
 
 ---
-
-Feel free to update the GitHub link and project name! 🚀 Let me know if you need any changes. 😊
